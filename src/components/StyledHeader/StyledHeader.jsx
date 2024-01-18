@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 // styles
 import styles from "./StyledHeader.module.scss";
 
@@ -7,6 +9,12 @@ import icon from '../../assets/icon.svg';
 
 
 function StyledHeader() {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
+
   return (
   <div className={styles['header-wrapper']}>
     <div className={styles['back-wrapper']}>

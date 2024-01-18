@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 // components
 import Card from "../Card/Card";
 
@@ -9,8 +12,6 @@ import loseWeightImage from '../../assets/lose-weight.svg';
 import gainMuscleImage from '../../assets/gain-muscle.svg';
 import healthyHabits1Image from '../../assets/healthy-habits-1.svg';
 import healthyHabits2Image from '../../assets/healthy-habits-2.svg';
-import { useState } from "react";
-
 
 // constants
 const cards = [
@@ -33,10 +34,12 @@ const cards = [
 ];
 
 function Goal() {
+  const navigate = useNavigate();
   const [goal, setGoal] = useState('');
 
   const handleChange = (goal) => {
     setGoal(goal);
+    navigate('/weight')
   }
 
   return (
