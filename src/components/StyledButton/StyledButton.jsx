@@ -1,7 +1,8 @@
 // styles
+import { useEffect } from "react";
 import styles from "./StyledButton.module.scss";
 
-function StyledButton({ handleSubmit, text, validation }) {
+function StyledButton({ handleSubmit, text, disabled }) {
   const handleClick = () => {
     handleSubmit();
   };
@@ -9,8 +10,8 @@ function StyledButton({ handleSubmit, text, validation }) {
   return (
     <button
       onClick={handleClick}
-      disabled={validation}
-      className={`${styles['btn']} ${validation ? styles['disabled'] : ''}`}
+      disabled={disabled}
+      className={`${styles['btn']} ${disabled ? styles['disabled'] : ''}`}
     >
       {text}
     </button>

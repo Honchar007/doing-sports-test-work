@@ -14,7 +14,7 @@ function MeasureWeight() {
   const [measure, setMeasure] = useState('Imperial');
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
-  const [validation, setValidation] = useState(false);
+  const [validation, setValidation] = useState(true);
 
   const handleChangeMeasure = (value) => {
     setMeasure(value);
@@ -31,16 +31,17 @@ function MeasureWeight() {
   const handleClick = () => {
     navigate('/destructive-behavior');
   };
-
+/*&&
+        parseFloat(weight) > 0 &&
+        parseFloat(height) > 0 */
   useEffect(() => {
-    if (height !== '' &&
-        weight !== '' &&
-        weight > 0 &&
-        height > 0) {
-      console.log('true');
-      setValidation(true);
-    } else {
+    if (height &&
+        weight &&
+        parseFloat(weight) > 0 &&
+        parseFloat(height) > 0) {
       setValidation(false);
+    } else {
+      setValidation(true);
     }
   }, [height, weight]);
 
@@ -80,10 +81,7 @@ function MeasureWeight() {
     <StyledButton
       handleSubmit={handleClick}
       text='Continue'
-      disabled={height !== '' &&
-      weight !== '' &&
-      weight > 0 &&
-      height > 0}
+      disabled={validation}
     />
   </div>
 );
