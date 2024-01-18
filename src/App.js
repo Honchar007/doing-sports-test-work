@@ -13,12 +13,15 @@ import PhysicalExercise from "./components/PhysicalExercise/PhysicalExercise";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="container">
         <StyledHeader />
         <Routes>
           <Route path="/" element={<Goal />} />
           <Route path="/weight" element={<MeasureWeight />} />
-          <Route path="/next" element={<DestructiveBehavior />} />
+          <Route
+            path="/destructive-behavior"
+            element={<DestructiveBehavior />}
+          />
           <Route path="/final" element={<PhysicalExercise />} />
         </Routes>
       </div>

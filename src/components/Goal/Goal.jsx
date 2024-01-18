@@ -39,7 +39,7 @@ function Goal() {
 
   const handleChange = (goal) => {
     setGoal(goal);
-    navigate('/weight')
+    navigate('/weight');
   }
 
   return (
