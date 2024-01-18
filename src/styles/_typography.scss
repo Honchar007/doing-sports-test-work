@@ -1,0 +1,10 @@
+$font-family-heading: 'Inter';
+
+@mixin typo-headline-1 {
+  font-family: $font-family-heading;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0.025em;
+}
+

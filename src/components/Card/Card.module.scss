@@ -1,0 +1,40 @@
+.card-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 1rem;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 2rem;
+  background: linear-gradient(213.67deg, #F1F1F1 12.33%, #FFFFFF 69.93%),
+  linear-gradient(0deg, #E1E1E1, #E1E1E1);
+  transition: 0.3s ease all;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(144, 238, 144, 0.5);
+  }
+
+  .card-title {
+    width: 2rem;
+    font-family: 'Inter';
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 23px;
+    letter-spacing: 0.2px;
+    text-align: left;
+  }
+
+  img {
+    overflow: hidden;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
+}
+
+.selected {
+  border: 1px solid lightgreen;
+  box-shadow: 0 4px 8px rgba(144, 238, 144, 0.5);
+}
