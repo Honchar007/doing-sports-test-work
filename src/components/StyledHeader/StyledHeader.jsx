@@ -17,7 +17,7 @@ function StyledHeader() {
 
   return (
   <div className={styles['header-wrapper']}>
-    <div className={styles['back-wrapper']}>
+    <div onClick={handleGoBack} className={styles['back-wrapper']}>
       <img src={leftArrow} alt="left-arrow" />
     </div>
     <div className={styles['main-link']}>

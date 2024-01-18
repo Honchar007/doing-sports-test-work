@@ -11,8 +11,17 @@
 
   .back-wrapper {
     display: flex;
+    width: 2rem;
+    height: 2rem;
     justify-content: center;
     align-items: center;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s all ease;
+
+    &:hover {
+      box-shadow: 0 4px 8px rgba(157, 158, 157, 0.5);
+    }
   }
 
   .main-link {
