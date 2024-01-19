@@ -2,18 +2,14 @@
 import { useEffect } from "react";
 import styles from "./StyledButton.module.scss";
 
-function StyledButton({ handleSubmit, text, disabled }) {
-  const handleClick = () => {
-    handleSubmit();
-  };
-
+function StyledButton({ children, disabled, ...attributes }) {
   return (
     <button
-      onClick={handleClick}
       disabled={disabled}
+      {...attributes}
       className={`${styles['btn']} ${disabled ? styles['disabled'] : ''}`}
     >
-      {text}
+      {children}
     </button>
   );
 }

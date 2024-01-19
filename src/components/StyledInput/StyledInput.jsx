@@ -1,20 +1,16 @@
 // styles
 import styles from "./StyledInput.module.scss";
 
-function StyledInput({ handleChangeMeasure, placeholder, value }) {
-  const handleChange = (value) => {
-    handleChangeMeasure(value);
-  };
+function StyledInput({ error, ...args }) {
 
   return (
   <div className={styles['input-wrapper']}>
     <input
-      type="number"
-      value={value}
-      placeholder={placeholder}
-      onChange={handleChange}
+      type="text"
       className={styles['number-input']}
+      {...args}
     />
+    {error && <label className={styles['error-message']}>{error}</label>}
   </div>
   );
 }
