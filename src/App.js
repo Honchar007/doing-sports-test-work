@@ -22,7 +22,7 @@ function App() {
             path="/destructive-behavior"
             element={<DestructiveBehavior />}
           />
-          <Route path="/final" element={<PhysicalExercise />} />
+          <Route path="/physical-exercise" element={<PhysicalExercise />} />
         </Routes>
       </div>
     </Router>

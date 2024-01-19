@@ -1,5 +1,4 @@
 // styles
-import { useEffect } from "react";
 import styles from "./StyledButton.module.scss";
 
 function StyledButton({ children, disabled, ...attributes }) {

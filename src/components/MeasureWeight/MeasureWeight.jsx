@@ -1,6 +1,5 @@
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import * as Yup from 'yup';
 
 // components
@@ -34,16 +33,6 @@ function MeasureWeight() {
   const handleChangeMeasure = (value) => {
     formik.setFieldValue('measure', value);
   };
-
-  const showerr = () => {
-    console.log(formik.errors);
-    console.log(formik.isValid);
-  }
-
-  // useEffect(() => {
-  //   formik.setFieldError('validation', !formik.isValid);
-  // // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [formik.isValid]);
 
   return (
     <form onSubmit={formik.handleSubmit}>
