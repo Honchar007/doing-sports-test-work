@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 // styles
 import "./styles/index.scss";
@@ -9,13 +9,16 @@ import Goal from "./components/Goal/Goal";
 import MeasureWeight from "./components/MeasureWeight/MeasureWeight";
 import DestructiveBehavior from "./components/DestructiveBehavior/DestructiveBehavior";
 import PhysicalExercise from "./components/PhysicalExercise/PhysicalExercise";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
+
   return (
-    <Router>
-      <div className="container">
-        <StyledHeader />
-        <Routes>
+    <div className="container">
+      <StyledHeader />
+      <AnimatePresence mode="wait">
+        <Routes key={location.pathname} location={location}>
           <Route path="/" element={<Goal />} />
           <Route path="/weight" element={<MeasureWeight />} />
           <Route
@@ -24,8 +27,8 @@ function App() {
           />
           <Route path="/physical-exercise" element={<PhysicalExercise />} />
         </Routes>
-      </div>
-    </Router>
+      </AnimatePresence>
+    </div>
   );
 }
 

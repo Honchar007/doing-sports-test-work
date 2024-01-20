@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+// components
+import AnimationPage from '../AnimationPage/AnimationPage';
+
 // styles
 import styles from "./PhysicalExercise.module.scss";
 
@@ -34,36 +37,38 @@ function PhysicalExercise() {
   };
 
   return (
-  <div className={styles['physical-wrapper']}>
-    <div className={styles['physical-info']}>
-      <div className={styles['info-title']}>Physical exercise</div>
-      <div className={styles['info-description']}>
-        Physical exercise means a lot for a woman who 
-        wants to lose kilos and works at the office
-      </div>
-    </div>
-    <div className={styles['physical-exercise']}>
-      <div className={styles['physical-title']}>
-        How active are you during the day?
-      </div>
-      <div className={styles['physical-main']}>
-        <div>
-          <img src={BodyExercise} alt='Body' />
-        </div>
-        <div className={styles['physical-cards']}>
-          {exercises && exercises.map((el) =>
-            <div
-              key={el.value}
-              onClick={() => handleChange(el.value)}
-              className={`${styles['card']} ${ selected === el.value ? styles['selected'] : ''}`}
-            >
-              <span className={styles['title']}>{el.text}</span>
-            </div>
-          )}
+  <AnimationPage>
+    <div className={styles['physical-wrapper']}>
+      <div className={styles['physical-info']}>
+        <div className={styles['info-title']}>Physical exercise</div>
+        <div className={styles['info-description']}>
+          Physical exercise means a lot for a woman who 
+          wants to lose kilos and works at the office
         </div>
       </div>
+      <div className={styles['physical-exercise']}>
+        <div className={styles['physical-title']}>
+          How active are you during the day?
+        </div>
+        <div className={styles['physical-main']}>
+          <div>
+            <img src={BodyExercise} alt='Body' />
+          </div>
+          <div className={styles['physical-cards']}>
+            {exercises && exercises.map((el) =>
+              <div
+                key={el.value}
+                onClick={() => handleChange(el.value)}
+                className={`${styles['card']} ${ selected === el.value ? styles['selected'] : ''}`}
+              >
+                <span className={styles['title']}>{el.text}</span>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </AnimationPage>
   );
 }
 

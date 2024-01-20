@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // components
+import AnimationPage from "../AnimationPage/AnimationPage";
 import Card from "../Card/Card";
 
 // styles
@@ -43,30 +44,32 @@ function Goal() {
   }
 
   return (
-  <div className={styles['goal-wrapper']}>
-    <div className={styles['goal-title']}>The Goal</div>
-    <div className={styles['goal-desc']}>
-      Focus on the health benefits you need.
-    </div>
-    <div className={styles['goal-desc']}>
-      Balanced nutrition will let you achieve them
-    </div>
-    <div className={styles['goal-function']}>
-      <div className={styles['goal-subtitle']}>
-        What are your goals?
+  <AnimationPage>
+    <div className={styles['goal-wrapper']}>
+      <div className={styles['goal-title']}>The Goal</div>
+      <div className={styles['goal-desc']}>
+        Focus on the health benefits you need.
       </div>
-      <div className={styles['goal-cards']}>
-        {cards && cards.map((el, index) =>
-        <Card
-          key={index}
-          title={el.title}
-          image={el.image}
-          handleChange={handleChange}
-          selected={el.title === goal}
-        />)}
+      <div className={styles['goal-desc']}>
+        Balanced nutrition will let you achieve them
+      </div>
+      <div className={styles['goal-function']}>
+        <div className={styles['goal-subtitle']}>
+          What are your goals?
+        </div>
+        <div className={styles['goal-cards']}>
+          {cards && cards.map((el, index) =>
+          <Card
+            key={index}
+            title={el.title}
+            image={el.image}
+            handleChange={handleChange}
+            selected={el.title === goal}
+          />)}
+        </div>
       </div>
     </div>
-  </div>
+  </AnimationPage>
   );
 }
 

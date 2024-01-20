@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // components
+import AnimationPage from "../AnimationPage/AnimationPage";
 import StyledButton from "../StyledButton/StyledButton";
 
 // styles
@@ -62,35 +63,37 @@ function DestructiveBehavior() {
   }
 
   return (
-  <div className={styles['destructive-wrapper']}>
-    <div className={styles['destructive-info']}>
-      <div className={styles['info-title']}>Destructive behaviors</div>
-      <div className={styles['info-description']}>We all have them! Which are yours?</div>
-    </div>
-    <div className={styles['destructive-cards']}>
-      { destructives && destructives.map((el) =>
-        <div
-          key={el.title}
-          onClick={() => toggleSelection(el.title)}
-          className={`${styles['card-wrapper']} ${selectedDestructives.includes(el.title) ? styles['selected'] : ''}`}
-        >
-          <div>
-            <img src={el.image} alt={el.title} />
+  <AnimationPage>
+    <div className={styles['destructive-wrapper']}>
+      <div className={styles['destructive-info']}>
+        <div className={styles['info-title']}>Destructive behaviors</div>
+        <div className={styles['info-description']}>We all have them! Which are yours?</div>
+      </div>
+      <div className={styles['destructive-cards']}>
+        { destructives && destructives.map((el) =>
+          <div
+            key={el.title}
+            onClick={() => toggleSelection(el.title)}
+            className={`${styles['card-wrapper']} ${selectedDestructives.includes(el.title) ? styles['selected'] : ''}`}
+          >
+            <div>
+              <img src={el.image} alt={el.title} />
+            </div>
+            <div className={styles['card-title']}>
+              {el.title}
+            </div>
           </div>
-          <div className={styles['card-title']}>
-            {el.title}
-          </div>
-        </div>
-      )}
+        )}
+      </div>
+      <StyledButton
+        type='submit'
+        onClick={handleSubmit}
+        disabled={selectedDestructives.length === 0}
+      >
+        Continue
+      </StyledButton>
     </div>
-    <StyledButton
-      type='submit'
-      onClick={handleSubmit}
-      disabled={selectedDestructives.length === 0}
-    >
-      Continue
-    </StyledButton>
-  </div>
+  </AnimationPage>
   );
 }
 
