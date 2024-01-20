@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 // styles
 import "./styles/index.scss";
@@ -9,7 +10,6 @@ import Goal from "./components/Goal/Goal";
 import MeasureWeight from "./components/MeasureWeight/MeasureWeight";
 import DestructiveBehavior from "./components/DestructiveBehavior/DestructiveBehavior";
 import PhysicalExercise from "./components/PhysicalExercise/PhysicalExercise";
-import { AnimatePresence } from "framer-motion";
 
 function App() {
   const location = useLocation();

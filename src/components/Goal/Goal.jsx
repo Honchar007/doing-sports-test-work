@@ -1,5 +1,8 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+// store
+import { useDispatch, useSelector } from "react-redux";
+import { passGoal, selectGoal } from "../../store/fitnessSlicer";
 
 // components
 import AnimationPage from "../AnimationPage/AnimationPage";
@@ -17,18 +20,22 @@ import healthyHabits2Image from '../../assets/healthy-habits-2.svg';
 // constants
 const cards = [
   {
+    value: 'lose-weight',
     title: 'Lose Weight',
     image: loseWeightImage,
   },
   {
+    value: 'gain-muscle',
     title: 'Gain Muscle',
     image: gainMuscleImage,
   },
   {
+    value: 'develop-healthy-habits-1',
     title: 'Develop healthy habits',
     image: healthyHabits1Image,
   },
   {
+    value: 'develop-healthy-habits-2',
     title: 'Develop healthy habits',
     image: healthyHabits2Image,
   },
@@ -36,10 +43,11 @@ const cards = [
 
 function Goal() {
   const navigate = useNavigate();
-  const [goal, setGoal] = useState('');
+  const dispatch = useDispatch();
+  const selectedGoal = useSelector(selectGoal);
 
   const handleChange = (goal) => {
-    setGoal(goal);
+    dispatch(passGoal(goal));
     navigate('/weight');
   }
 
@@ -58,13 +66,13 @@ function Goal() {
           What are your goals?
         </div>
         <div className={styles['goal-cards']}>
-          {cards && cards.map((el, index) =>
+          {cards && cards.map((el) =>
           <Card
-            key={index}
+            key={el.value}
             title={el.title}
             image={el.image}
-            handleChange={handleChange}
-            selected={el.title === goal}
+            handleChange={() => handleChange(el.value)}
+            selected={el.value === selectedGoal}
           />)}
         </div>
       </div>
