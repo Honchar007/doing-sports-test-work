@@ -1,6 +1,11 @@
+import { useEffect } from 'react';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
+
+// store
+import { useDispatch, useSelector } from 'react-redux';
+import { passMeasures, selectMeasures } from '../../store/fitnessSlicer';
 
 // components
 import AnimationPage from '../AnimationPage/AnimationPage';
@@ -17,16 +22,18 @@ const validationSchema = Yup.object().shape({
 
 function MeasureWeight() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const measures = useSelector(selectMeasures);
 
   const formik = useFormik({
     initialValues: {
       measure: 'Imperial',
-      height: '',
-      weight: '',
+      height: measures.height + '',
+      weight: measures.weight + '',
     },
     validationSchema,
     onSubmit: (values) => {
-      console.log(values); // Do something with the form data
+      dispatch(passMeasures(values));
       navigate('/destructive-behavior');
     },
   });
@@ -34,6 +41,15 @@ function MeasureWeight() {
   const handleChangeMeasure = (value) => {
     formik.setFieldValue('measure', value);
   };
+
+  useEffect(() => {
+    if (measures.height > 0 && measures.weight > 0) {
+      handleChangeMeasure(measures.measurementType);
+      formik.setFieldValue('height', measures.height);
+      formik.setFieldValue('weight', measures.weight);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <AnimationPage>

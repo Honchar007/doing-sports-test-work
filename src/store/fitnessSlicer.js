@@ -5,7 +5,7 @@ const initialState = {
   measures: {
     height: 0,
     weight: 0,
-    measurementType: "",
+    measurementType: "Imperial",
   },
   destructives: [],
   trainingTimes: 0,
@@ -25,7 +25,11 @@ const fitnessSlicer = createSlice({
       state.goal = action.payload;
     },
     passMeasures(state, action) {
-      state.measures = { ...action.payload };
+      state.measures = {
+        measurementType: action.payload.measure,
+        height: parseFloat(action.payload.height),
+        weight: parseFloat(action.payload.weight),
+      };
     },
     passDestructives(state, action) {
       state.destructives = [...action.payload];
