@@ -1,5 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+// store
+import { useDispatch, useSelector } from "react-redux";
+import { passDestructives, selectDestructives } from "../../store/fitnessSlicer";
 
 // components
 import AnimationPage from "../AnimationPage/AnimationPage";
@@ -46,6 +50,8 @@ const destructives = [
 
 function DestructiveBehavior() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const oldDestructives = useSelector(selectDestructives);
 
   const [selectedDestructives, setSelectedDestructives] = useState([]);
 
@@ -59,8 +65,14 @@ function DestructiveBehavior() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(passDestructives(selectedDestructives));
     navigate('/physical-exercise');
   }
+
+  useEffect(() => {
+    setSelectedDestructives([...oldDestructives]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
   <AnimationPage>

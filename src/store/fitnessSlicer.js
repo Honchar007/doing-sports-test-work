@@ -8,7 +8,7 @@ const initialState = {
     measurementType: "Imperial",
   },
   destructives: [],
-  trainingTimes: 0,
+  trainingTimes: "",
   loading: false,
 };
 
@@ -52,7 +52,7 @@ export const selectGoal = (state) => state.goal;
 export const selectLoading = (state) => state.loading;
 export const selectDestructives = (state) => state.destructives;
 export const selectMeasures = (state) => state.measures;
-export const selectExercise = (state) => state.exercise;
+export const selectExercise = (state) => state.trainingTimes;
 
 export const { passGoal, passDestructives, passMeasures, passTrainingTimes } =
   fitnessSlicer.actions;

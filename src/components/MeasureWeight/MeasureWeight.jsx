@@ -32,7 +32,8 @@ function MeasureWeight() {
       weight: measures.weight + '',
     },
     validationSchema,
-    onSubmit: (values) => {
+    onSubmit: (values, { setSubmitting }) => {
+      setSubmitting(true);
       dispatch(passMeasures(values));
       navigate('/destructive-behavior');
     },

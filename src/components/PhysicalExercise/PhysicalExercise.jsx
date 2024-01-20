@@ -1,4 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+// store
+import { useDispatch, useSelector } from "react-redux";
+import { passTrainingTimes, selectExercise } from "../../store/fitnessSlicer";
 
 // components
 import AnimationPage from '../AnimationPage/AnimationPage';
@@ -13,28 +17,37 @@ import BodyExercise from '../../assets/body-exercise.svg';
 const exercises = [
   {
     text: 'Hardly at all',
-    value: 0,
+    value: 'Null training',
   },
   {
     text: 'Fitness 1-2 times a week',
-    value: 1,
+    value: '1-2 times',
   },
   {
     text: 'Fitness 3-5 times a week',
-    value: 2,
+    value: '3-5 times',
   },
   {
     text: 'Fitness 5-7 times a week',
-    value: 3,
+    value: '5-7 times',
   },
 ];
 
 function PhysicalExercise() {
+  const dispatch = useDispatch();
+  const oldExercise = useSelector(selectExercise);
+
   const [selected, setSelected] = useState(null);
 
   const handleChange = (value) => {
     setSelected(value);
+    dispatch(passTrainingTimes(value));
   };
+
+  useEffect(() => {
+    setSelected(oldExercise);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
   <AnimationPage>
