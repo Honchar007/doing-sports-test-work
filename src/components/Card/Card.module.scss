@@ -7,8 +7,8 @@
   gap: 2rem;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid grey;
-  border-radius: 2rem;
+  border: 1px solid #E1E1E1;
+  border-radius: 1.3rem;
   background: linear-gradient(213.67deg, #F1F1F1 12.33%, #FFFFFF 69.93%),
   linear-gradient(0deg, #E1E1E1, #E1E1E1);
   transition: 0.3s ease all;
@@ -27,8 +27,8 @@
 
   img {
     overflow: hidden;
-    border-top-right-radius: 2rem;
-    border-bottom-right-radius: 2rem;
+    border-top-right-radius: 1.3rem;
+    border-bottom-right-radius: 1.3rem;
   }
 }
 
