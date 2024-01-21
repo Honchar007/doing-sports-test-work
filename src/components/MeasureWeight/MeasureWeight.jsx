@@ -28,8 +28,8 @@ function MeasureWeight() {
   const formik = useFormik({
     initialValues: {
       measure: 'Imperial',
-      height: measures.height ? measures.height + '' : '',
-      weight: measures.weight ? measures.weight + '' : '',
+      height: measures && measures.height ? measures.height + '' : '',
+      weight: measures && measures.weight ? measures.weight + '' : '',
     },
     validationSchema,
     onSubmit: (values, { setSubmitting }) => {
@@ -44,7 +44,7 @@ function MeasureWeight() {
   };
 
   useEffect(() => {
-    if (measures.height > 0 && measures.weight > 0) {
+    if (measures && measures.height > 0 && measures.weight > 0) {
       handleChangeMeasure(measures.measurementType);
       formik.setFieldValue('height', measures.height);
       formik.setFieldValue('weight', measures.weight);

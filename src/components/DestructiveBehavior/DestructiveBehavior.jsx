@@ -70,7 +70,9 @@ function DestructiveBehavior() {
   }
 
   useEffect(() => {
-    setSelectedDestructives([...oldDestructives]);
+    if(oldDestructives && oldDestructives.length > 0) {
+      setSelectedDestructives([...oldDestructives]);
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
