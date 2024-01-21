@@ -8,3 +8,65 @@ $font-family-heading: 'Inter';
   letter-spacing: 0.025em;
 }
 
+@mixin typo-extra-bold {
+  font-family: $font-family-heading;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 15px;
+  letter-spacing: 2.5px;
+  text-align: center;
+}
+
+@mixin typo-bold-headline-1 {
+  font-family: $font-family-heading;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0.25px;
+  text-align: center;
+}
+
+@mixin typo-bold-subtitle {
+  font-family: $font-family-heading;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+@mixin typo-button {
+  font-family: $font-family-heading;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+@mixin typo-card-title {
+  font-family: $font-family-heading;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0.2px;
+  text-align: left;
+}
+
+@mixin typo-description {
+  font-family: $font-family-heading;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+  text-align: center;
+}
+
+@mixin typo-card-title-thin {
+  font-family: $font-family-heading;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  text-align: left;
+}

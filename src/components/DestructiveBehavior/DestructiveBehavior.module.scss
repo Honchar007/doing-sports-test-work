@@ -1,3 +1,5 @@
+@import '../../styles/_typography.scss';
+
 .destructive-wrapper {
   display: flex;
   flex-direction: column;
@@ -14,21 +16,11 @@
     margin-top: 0.5rem;
 
     .info-title {
-      font-family: 'Inter';
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 36px;
-      letter-spacing: 0.25px;
-      text-align: center;
+      @include typo-bold-headline-1;
     }
 
     .info-description {
-      font-family: 'Inter';
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0.25px;
-      text-align: center;
+      @include typo-description;
     }
   }
 
@@ -63,13 +55,9 @@
       }
 
       .card-title {
+        @include typo-card-title-thin;
+
         width: 60%;
-        font-family: 'Inter';
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 18px;
-        letter-spacing: 0.3px;
-        text-align: left;
       }
     }
 

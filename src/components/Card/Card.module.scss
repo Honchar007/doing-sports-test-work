@@ -1,3 +1,5 @@
+@import '../../styles/_typography.scss';
+
 .card-wrapper {
   display: flex;
   flex-direction: row;
@@ -18,13 +20,9 @@
   }
 
   .card-title {
+    @include typo-card-title;
+
     width: 2rem;
-    font-family: 'Inter';
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 23px;
-    letter-spacing: 0.2px;
-    text-align: left;
   }
 
   img {

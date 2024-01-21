@@ -1,3 +1,5 @@
+@import '../../styles/_typography.scss';
+
 .measure-wrapper {
   display: flex;
   flex-direction: column;
@@ -18,6 +20,8 @@
 
 
     .choice {
+      @include typo-extra-bold;
+
       display: flex;
       justify-content: center;
       align-items: center;
@@ -27,12 +31,6 @@
       color: #5FCB39;
       text-transform: uppercase;
       cursor: pointer;
-      font-family: 'Inter';
-      font-size: 12px;
-      font-weight: 800;
-      line-height: 15px;
-      letter-spacing: 2.5px;
-      text-align: center;
       transition: 0.3s ease all;
 
       &:hover {
@@ -78,21 +76,11 @@
     margin-bottom: 2rem;
 
     .info-title {
-      font-family: 'Inter';
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 36px;
-      letter-spacing: 0.25px;
-      text-align: center;
+      @include typo-bold-headline-1;
     }
 
     .info-description {
-      font-family: 'Inter';
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0.25px;
-      text-align: center;
+      @include typo-description;
     }
   }
 }

@@ -1,3 +1,5 @@
+@import '../../styles/_typography.scss';
+
 .physical-wrapper {
   display: flex;
   flex-direction: column;
@@ -15,21 +17,11 @@
     margin-bottom: 1rem;
 
     .info-title {
-      font-family: 'Inter';
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 36px;
-      letter-spacing: 0.25px;
-      text-align: center;
+      @include typo-bold-headline-1;
     }
 
     .info-description {
-      font-family: 'Inter';
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0.25px;
-      text-align: center;
+      @include typo-description;
     }
   }
 
@@ -40,13 +32,9 @@
     align-items: center;
 
     .physical-title {
+      @include typo-bold-subtitle;
+
       margin-bottom: 1rem;
-      font-family: 'Inter';
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 24px;
-      letter-spacing: 0.2px;
-      text-align: center;
     }
 
     .physical-main {
