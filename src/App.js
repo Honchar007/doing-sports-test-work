@@ -19,7 +19,7 @@ function App() {
       <StyledHeader />
       <AnimatePresence mode="wait">
         <Routes key={location.pathname} location={location}>
-          <Route exact path="/doing-sports-test-work" element={<Goal />} />
+          <Route exact path="/" element={<Goal />} />
           <Route path="/weight" element={<MeasureWeight />} />
           <Route
             path="/destructive-behavior"
