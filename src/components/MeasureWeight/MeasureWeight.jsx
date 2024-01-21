@@ -28,8 +28,8 @@ function MeasureWeight() {
   const formik = useFormik({
     initialValues: {
       measure: 'Imperial',
-      height: measures.height + '',
-      weight: measures.weight + '',
+      height: measures.height ? measures.height + '' : '',
+      weight: measures.weight ? measures.weight + '' : '',
     },
     validationSchema,
     onSubmit: (values, { setSubmitting }) => {
