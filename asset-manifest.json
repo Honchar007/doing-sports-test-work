@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/doing-sports-test-work/static/css/main.722bd679.css",
-    "main.js": "/doing-sports-test-work/static/js/main.8164c5e9.js",
+    "main.js": "/doing-sports-test-work/static/js/main.0cc610c0.js",
     "static/js/787.e3a5f3ea.chunk.js": "/doing-sports-test-work/static/js/787.e3a5f3ea.chunk.js",
     "static/media/body-exercise.svg": "/doing-sports-test-work/static/media/body-exercise.50dc57a9c4c61cb8178d796d67f29acd.svg",
     "static/media/healthy-habits-1.svg": "/doing-sports-test-work/static/media/healthy-habits-1.f3a92c1106d556b8111240d6294145d4.svg",
@@ -18,11 +18,11 @@
     "index.html": "/doing-sports-test-work/index.html",
     "static/media/left-arrow.svg": "/doing-sports-test-work/static/media/left-arrow.2a373f96fabaf6e1f53a0640200363ab.svg",
     "main.722bd679.css.map": "/doing-sports-test-work/static/css/main.722bd679.css.map",
-    "main.8164c5e9.js.map": "/doing-sports-test-work/static/js/main.8164c5e9.js.map",
+    "main.0cc610c0.js.map": "/doing-sports-test-work/static/js/main.0cc610c0.js.map",
     "787.e3a5f3ea.chunk.js.map": "/doing-sports-test-work/static/js/787.e3a5f3ea.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.722bd679.css",
-    "static/js/main.8164c5e9.js"
+    "static/js/main.0cc610c0.js"
   ]
 }
